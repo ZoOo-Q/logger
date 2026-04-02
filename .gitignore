@@ -1,0 +1,22 @@
+# 构建目录
+build/
+
+# 编译生成的文件
+*.o
+*.a
+*.so
+*.dylib
+*.dll
+
+# 日志文件
+*.log
+
+# 临时文件
+*.tmp
+*.temp
+
+# IDE 配置文件
+.vscode/
+.idea/
+*.swp
+*.swo
