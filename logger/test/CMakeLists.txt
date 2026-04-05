@@ -22,6 +22,7 @@ include_directories(${GTEST_INCLUDE_DIRS})
 add_executable(mmap_test mmp_test.cc)
 add_executable(space_test space_test.cc)
 add_executable(fmt_test fmt_test.cc)
+add_executable(logmsg_test logmsg_test.cc)
 
 
 
@@ -48,8 +49,17 @@ target_link_libraries(fmt_test PRIVATE
     fmt::fmt
 )
 
+target_link_libraries(logmsg_test PRIVATE
+    logger
+    GTest::gtest
+    GTest::gtest_main
+    pthread
+    fmt::fmt
+)
+
 # 启用测试
 enable_testing()
 add_test(NAME mmap_test COMMAND mmap_test)
 add_test(NAME space_test COMMAND space_test)
 add_test(NAME fmt_test COMMAND fmt_test)
+add_test(NAME logmsg_test COMMAND logmsg_test)

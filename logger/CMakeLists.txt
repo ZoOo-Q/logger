@@ -2,11 +2,14 @@
 
 cmake_minimum_required(VERSION 3.10)
 
+
+find_package(fmt REQUIRED)
 # 创建 logger 库
 add_library(logger
     mmap/mmap_aux.cc
     mmap/mmap_linux.cc
     utils/file_util.cc
+    log_msg.cc
 )
 
 # 包含头文件目录
@@ -19,4 +22,5 @@ target_include_directories(logger PUBLIC
 # 链接系统库
 target_link_libraries(logger PRIVATE
     pthread
+    fmt::fmt
 )
