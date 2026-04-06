@@ -5,7 +5,7 @@
 #include <vector>
 #include "fmt/core.h"
 #include <string>
-
+#include "../iternal_log.h"
 namespace logger {
 namespace test {
 
@@ -24,7 +24,7 @@ protected:
 TEST_F(FmtTest, BasicFormat) {
     std::string result = fmt::format("Hello, {}", "world");
     EXPECT_EQ(result, "Hello, world");
-
+    
     result = fmt::format("{}", 42);
     EXPECT_EQ(result, "42");
 
